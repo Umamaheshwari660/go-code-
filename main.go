@@ -83,8 +83,64 @@ func main() {
 	//fmt.Println(c)
 	//
 	hrithik.Walk()
+
+	//
+
+	h1 := Human{
+		Legs:      2,
+		Fingers:   201,
+		HairColor: "green",
+	}
+
+	h2 := NewHuman(2, 20, "green")
+
+	fmt.Println("Equating two structs", h1 == h2) // == is for equality check  !=  equality check operator  = (assignment operator)
+	//var c string
+	//c="hello"  // we are doing assignment here
+	// % --> modulus operator ---> it returns the rmainder of division of two values   5%2 == 1
+
+	PrintHuman(h1)
+
+	s1 := Student{
+		Name: "shubham",
+		Age:  20,
+		Address: Address{
+			City:    "New Delhi",
+			State:   "New Delhi",
+			PinCode: "201001",
+		}}
+
+	fmt.Printf("%+v", s1)
 }
 
 // ----go is not an object oriented progrmaming language it has objects
 // object is just a real world entity which we represent in our code
 /// - how an object --what object contains ---> object has properties and object has behaviour
+
+func PrintHuman(h Human) {
+	//fmt.Println(h)
+
+	// you can use formatted printing as well
+	//fmt.Printf("The struct %s ,has %d ,%+v", "human", 3, h) // %s and %d are formatter
+}
+
+// struct composition
+// inheritance which actuall corresponds to is a relationship and there is parentchild relation
+// composition corresponds to has a relationship
+
+// If one struct is included in another struct its called composition thats all
+type Student struct {
+	Name    string
+	Age     int
+	Address Address // composition ,if you are including (embedding ) one struct into another that becomes composition
+}
+
+type Address struct {
+	City    string
+	State   string
+	PinCode string
+}
+
+type Employee struct {
+	Address Address
+}
