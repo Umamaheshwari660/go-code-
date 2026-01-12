@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 type (
@@ -45,81 +44,102 @@ type Circle struct {
 }
 
 func main() {
-	var g Currency
-	fmt.Println(reflect.TypeOf(g))
-	convert(g)
-	//g = 90
-	//fmt.Println(g)
+	//var g Currency
+	//fmt.Println(reflect.TypeOf(g))
+	//convert(g)
+	////g = 90
+	////fmt.Println(g)
+	////
+	////var name Name
+	////name = Name("shubham")
 	//
-	//var name Name
-	//name = Name("shubham")
-
-	// type conversion
-	g = 9
-	fmt.Println(reflect.TypeOf(g))
-	// we can do type conversion and we can convert it to float
-	h := float32(g) // type conversion
-	fmt.Println(reflect.TypeOf(h))
-
-	//eswar := Human{
+	//// type conversion
+	//g = 9
+	//fmt.Println(reflect.TypeOf(g))
+	//// we can do type conversion and we can convert it to float
+	//h := float32(g) // type conversion
+	//fmt.Println(reflect.TypeOf(h))
+	//
+	////eswar := Human{
+	////	Legs:      2,
+	////	Fingers:   20,
+	////	HairColor: "Black",
+	////}
+	//
+	//hrithik := NewHuman(2, 21, "blonde")
+	//
+	//fmt.Println(hrithik.Fingers)
+	//
+	////// anonymous
+	////d := struct {
+	////	Name string
+	////}{
+	////	Name: "shubham",
+	////}
+	//
+	////var c Circle
+	////c.Radius = 9
+	////fmt.Println(c)
+	////
+	//hrithik.Walk()
+	//
+	////
+	//
+	//h1 := Human{
 	//	Legs:      2,
-	//	Fingers:   20,
-	//	HairColor: "Black",
+	//	Fingers:   201,
+	//	HairColor: "green",
 	//}
-
-	hrithik := NewHuman(2, 21, "blonde")
-
-	fmt.Println(hrithik.Fingers)
-
-	//// anonymous
-	//d := struct {
-	//	Name string
-	//}{
+	//
+	//h2 := NewHuman(2, 20, "green")
+	//
+	//fmt.Println("Equating two structs", h1 == h2) // == is for equality check  !=  equality check operator  = (assignment operator)
+	////var c string
+	////c="hello"  // we are doing assignment here
+	//// % --> modulus operator ---> it returns the rmainder of division of two values   5%2 == 1
+	//
+	//PrintHuman(h1)
+	//
+	//s1 := Student{
 	//	Name: "shubham",
+	//	Age:  20,
+	//	Address: Address{
+	//		City:    "New Delhi",
+	//		State:   "New Delhi",
+	//		PinCode: "201001",
+	//	}}
+	//
+	//fmt.Printf("%+v", s1)
+	//
+	//e1 := Employee{
+	//	Address{
+	//		City:    "New Delhi",
+	//		State:   "New Delhi",
+	//		PinCode: "201001",
+	//	},
 	//}
+	////fmt.Printf("%+v", e1)
+	var c int = 9
+	k := 90
+	j := &k
+	fmt.Println(&c) // &c is the memory location where 9 is stored in the memory
 
-	//var c Circle
-	//c.Radius = 9
-	//fmt.Println(c)
-	//
-	hrithik.Walk()
+	// pointer is a variable that stores the memmory address of another variable
+	d := &c // now the d is pointer
+	//fmt.Println(d+1) // this is not possible
 
-	//
+	// & and *
 
-	h1 := Human{
-		Legs:      2,
-		Fingers:   201,
-		HairColor: "green",
-	}
+	// * is basically a derefernce operator  -->derferencing is a accesing the value stored in the address pointed out by the pointer
 
-	h2 := NewHuman(2, 20, "green")
+	fmt.Println(*d + *j) // we are dereferencing d or we are trying to access the value pointed by the address stored in d
 
-	fmt.Println("Equating two structs", h1 == h2) // == is for equality check  !=  equality check operator  = (assignment operator)
-	//var c string
-	//c="hello"  // we are doing assignment here
-	// % --> modulus operator ---> it returns the rmainder of division of two values   5%2 == 1
+	// creat e pointer variable
+	//   declaration thing
+	//	var g *int // this say  g will store the address of memory location where the int value is gonna be stored
 
-	PrintHuman(h1)
+	//g = k
 
-	s1 := Student{
-		Name: "shubham",
-		Age:  20,
-		Address: Address{
-			City:    "New Delhi",
-			State:   "New Delhi",
-			PinCode: "201001",
-		}}
-
-	fmt.Printf("%+v", s1)
-
-	e1 := Employee{
-		Address{
-			City:    "New Delhi",
-			State:   "New Delhi",
-			PinCode: "201001",
-		},
-	}
-	fmt.Printf("%+v", e1)
 }
 
 // ----go is not an object oriented progrmaming language it has objects
