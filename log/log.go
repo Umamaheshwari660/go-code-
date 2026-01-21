@@ -28,4 +28,4 @@ func (s Service) Start(message string) {
 	s.Logger.Log(message)
 }
 
-// Yiu
+/
